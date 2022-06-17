@@ -25,6 +25,9 @@ app.get("/api/chat/:id", (req, res) => {
 
 app.use("/api/user", userRoutes);
 
+app.user(notFound);
+app.user(errorHandler);
+
 app.listen(port, () => {
   console.log(`Chat app listening on port ${port}!`);
 });
