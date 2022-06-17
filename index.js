@@ -2,9 +2,11 @@ const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const chats = require("./data/data");
+const connectDB = require("./config/db");
 const app = express();
 const port = process.env.PORT || 5000;
 dotenv.config();
+connectDB();
 
 app.get("/", (req, res) => {
   res.send("Hello World vvvvvvvvvvvvvvvvvvvvvvv!");
