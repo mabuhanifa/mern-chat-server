@@ -6,8 +6,11 @@ const connectDB = require("./config/db");
 const app = express();
 const port = process.env.PORT || 5000;
 const userRoutes = require("./routes/userRoutes");
+const { notFound, errorHandler } = require("./middleware/errorMiddleware");
+app.use(cors());
 dotenv.config();
 connectDB();
+
 app.use(express.json());
 
 app.get("/", (req, res) => {
